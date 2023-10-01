@@ -85,7 +85,7 @@ favoriteRouter
     Favorite.findOne({ user: req.user._id })
       .then((favorite) => {
         if (favorite) {
-          req.params.campsiteId = campsiteId;
+          const campsiteId = req.params.campsiteId;
 
           if (!favorite.campsites.includes(campsiteId)) {
             favorite.campsites
